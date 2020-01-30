@@ -22,8 +22,11 @@ function getRelativePath(fullPath = 'src/') {
   } else if (nonRootReg.test(fullPath)) {
     // if paths is like /something/else/here/src/my/component
     return fullPath.replace(/(^(.+?)){0,}src\//,'')
+  } else if (!!fullPath) {
+    // no src in the path
+    return fullPath
   } else {
-    throw Error(`No matching resource found for path ${fullPath}`)
+    throw Error(`lang import fullPath is empty`)
   }
 }
 
@@ -31,7 +34,6 @@ export const useLocale = (
   fullPath = 'src/',
   config = {}
 ) => {
-
   const relativePath = getRelativePath(fullPath)
   let {rootKey} = config;
 
