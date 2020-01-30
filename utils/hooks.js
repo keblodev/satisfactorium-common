@@ -2,11 +2,11 @@
 import {useEffect, useState, lazy}  from 'react';
 import { useSelector }              from 'react-redux';
 
-import {DEVICE_FORM_FACTORS, LOCALE_TYPE_ENG}    from 'common/statics';
+import {device, locale} from 'common/statics';
 import {updateLocale}           from 'common/utils/locale';
 
 const defaultLocale = {
-    name:       LOCALE_TYPE_ENG,
+    name:       locale.LOCALE_TYPE_ENG,
     code:       'en-us',
     lang:       'en',
     loaded:     'false',
@@ -73,7 +73,7 @@ export const useView = function (fullPath = 'src/') {
   const relativePath = fullPath.replace(/^src\//,'')
   const factor = useSelector(state => state.root.ux.device.factor);
 
-  const isMobile = factor === DEVICE_FORM_FACTORS.MOBILE || factor === DEVICE_FORM_FACTORS.TABLET;
+  const isMobile = factor === device.DEVICE_FORM_FACTORS.MOBILE || factor === device.DEVICE_FORM_FACTORS.TABLET;
   const [View, setView] = useState(getView(isMobile, relativePath));
 
   useEffect(()=>{

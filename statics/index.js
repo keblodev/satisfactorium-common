@@ -1,6 +1,6 @@
-import * as device from './device';
-import * as locale from  './locale';
-import * as theme from './theme';
+export const device = require('./device');
+export const locale = require('./locale');
+export const theme  = require('./theme');
 
 export default {
   ...device,
