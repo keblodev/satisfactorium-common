@@ -2,11 +2,11 @@
 import {useEffect, useState, lazy}  from 'react';
 import { useSelector }              from 'react-redux';
 
-import {DEVICE_FORM_FACTORS}    from 'statics/strings/reducers/ux';
+import {DEVICE_FORM_FACTORS, LOCALE_TYPE_ENG}    from 'common/statics';
 import {updateLocale}           from 'common/utils/locale';
 
 const defaultLocale = {
-    name:       'eng',
+    name:       LOCALE_TYPE_ENG,
     code:       'en-us',
     lang:       'en',
     loaded:     'false',
