@@ -62,7 +62,7 @@ export const useLocale = (
       path:       `${relativePath}/l18n`,
       cb:         () => setUpdatingLocale(false),
     })
-  }, [selectedLocale]);
+  }, [selectedLocale, rootKey, relativePath]);
 
   return {locale: selectedLocale, isLocaleUpdating: updatingLocale};
 }
@@ -78,7 +78,8 @@ export const useView = function (fullPath = 'src/') {
 
   useEffect(()=>{
     setView(getView(isMobile, relativePath));
-  }, [factor]);
+    return;
+  }, [factor, isMobile, relativePath]);
 
   return {
     View,
