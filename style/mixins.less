@@ -93,7 +93,7 @@
   align-items:    center;
   box-shadow:     0 0 0 #131313;
   display:        flex;
-  background:     @white;
+  background:    hsl(var(--body-main-base), 68%, 40%);
   height:         100%;
   margin:         0;
 
@@ -102,12 +102,12 @@
   width:      100%;
 
   &:hover, &.selected {
-    background-color: lighten(@brand-hover, 25%);
-    color:            @white;
+    background-color: var(--brand-main);
+    color:            @red;
   }
 
   &.hovered {
-      background: @blue;
+      background: var(--brand-main);
       color:      initial;
       box-shadow: 0px 15px 45px -10px rgba(0, 0, 0, 0.6);
       border-radius:  50%;
